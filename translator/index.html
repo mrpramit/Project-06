@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Translator Pro+</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- ===== TOP ===== -->
+        <div class="top">
+
+            <!-- Source Language -->
+            <div class="custom-select" id="sourceSelect">
+                <div class="selected">Detect</div>
+                <div class="options">
+                    <div data-value="auto">Detect</div>
+                    <div data-value="en">English</div>
+                    <div data-value="hi">Hindi</div>
+                </div>
+            </div>
+
+            <!-- Swap -->
+            <div id="swapBtn" class="swap">
+                <i class="fa-solid fa-right-left"></i>
+            </div>
+
+            <!-- Target Language -->
+            <div class="custom-select" id="targetSelect">
+                <div class="selected">Hindi</div>
+                <div class="options">
+                    <div data-value="hi">Hindi</div>
+                    <div data-value="en">English</div>
+                    <div data-value="fr">French</div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ===== PANELS ===== -->
+        <div class="panels">
+
+            <!-- Input -->
+            <div class="panel">
+                <textarea id="inputText" placeholder="Type something..."></textarea>
+            </div>
+
+            <!-- Output -->
+            <div class="panel">
+                <div id="outputText" class="output"></div>
+            </div>
+
+        </div>
+
+        <!-- ===== BOTTOM ===== -->
+        <div class="bottom">
+
+            <div class="actions">
+                <div class="action" onclick="copyText()">
+                    <i class="fa-regular fa-copy"></i> Copy
+                </div>
+
+                <div class="action" onclick="clearText()">
+                    <i class="fa-regular fa-trash-can"></i> Clear
+                </div>
+            </div>
+
+            <button class="btn" onclick="translateText()">
+                Translate
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>

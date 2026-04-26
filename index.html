@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Projects</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            background: radial-gradient(circle at top left, #1e293b, #020617);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            color: #fff;
+        }
+
+        /* Glow background */
+        body::before {
+            content: "";
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: #38bdf8;
+            filter: blur(120px);
+            opacity: 0.3;
+            top: 10%;
+            left: 10%;
+        }
+
+        body::after {
+            content: "";
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: #a78bfa;
+            filter: blur(120px);
+            opacity: 0.3;
+            bottom: 10%;
+            right: 10%;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 30px;
+            width: 90%;
+            max-width: 950px;
+            z-index: 1;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(15px);
+            border-radius: 20px;
+            padding: 35px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+            position: relative;
+            overflow: hidden;
+            transform: translateY(40px);
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards;
+        }
+
+        .card:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .card:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .card:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes fadeUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.04);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transform: translateX(-100%);
+            transition: 0.6s;
+        }
+
+        .card:hover::before {
+            transform: translateX(100%);
+        }
+
+        .card i {
+            font-size: 45px;
+            margin-bottom: 15px;
+            color: #38bdf8;
+        }
+
+        .card h2 {
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .card p {
+            color: #cbd5f5;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="card" onclick="openProject('Movie Search/index.html')">
+            <i class="fa-solid fa-film"></i>
+            <h2>Movie Search</h2>
+            <p>Search your favorite movies instantly</p>
+        </div>
+
+        <div class="card" onclick="openProject('translator/index.html')">
+            <i class="fa-solid fa-language"></i>
+            <h2>Translator</h2>
+            <p>Translate text between languages</p>
+        </div>
+
+        <div class="card" onclick="openProject('weather/index.html')">
+            <i class="fa-solid fa-cloud-sun"></i>
+            <h2>Weather App</h2>
+            <p>Check live weather updates</p>
+        </div>
+
+    </div>
+
+    <script>
+        function openProject(path) {
+            window.location.href = path;
+        }
+    </script>
+
+</body>
+
+</html>
